@@ -58,10 +58,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   // convert current time into minutes
   var timeNowMinutes = moment.duration(timeNow).asMinutes();
 
-  // time till next train is the frequency - the modulo if the difference between now and the start time
+  // time till next train is the frequency - the modulo of the difference between now and the start time
   var timeTillNext = trainFrequency - ((timeNowMinutes - timeStartMinutes) % trainFrequency);
 
-  // next arrival is now plus time time until next
+  // next arrival is now plus time until next
   var nextArrival = (timeNowMinutes + timeTillNext);
 
   // grab next arrival hours
